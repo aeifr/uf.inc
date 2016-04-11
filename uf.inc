@@ -1109,7 +1109,7 @@ stock GetClosestVehicle(playerid) //By Darkrealm (edited by Gabrie "Larcius" Cor
 		new closestvehicle=0;
 		new Float:closestdist=GetDistanceToVehicle(playerid,0);
 		new vehiclePoolSize = GetVehiclePoolSize();
-		for(new vehicleid=0; vehicleid<vehiclePoolSize; vehicleid++)
+		for(new vehicleid=0; vehicleid<vehiclePoolSize + 1; vehicleid++)
 		{
 			new Float:dist = GetDistanceToVehicle(playerid,vehicleid);
 			if ((dist < closestdist))
@@ -1146,7 +1146,7 @@ stock GetClosestPlayer(playerid) //By Slick (edited by Gabriel "Larcius" Cordes)
 		new closestplayer=0;
 		new Float:closestdist=GetDistanceBetweenPlayers(playerid,0);
 		new playerPoolSize = GetPlayerPoolSize();
-		for(new playerid2=0; playerid2<playerPoolSize; playerid2++)
+		for(new playerid2=0; playerid2<playerPoolSize + 1; playerid2++)
 		{
 			new Float:dist = GetDistanceBetweenPlayers(playerid,playerid2);
 			if ((dist < closestdist))
@@ -1167,7 +1167,7 @@ stock GetClosestTeamPlayer(playerid) //By Gabriel "Larcius" Cordes
 		new closestplayer=0;
 		new Float:closestdist=GetDistanceBetweenPlayers(playerid,0);
 		new playerPoolSize = GetPlayerPoolSize();
-		for(new playerid2=0; playerid2<playerPoolSize; playerid2++)
+		for(new playerid2=0; playerid2<playerPoolSize + 1; playerid2++)
 		{
 			new Float:dist = GetDistanceBetweenPlayers(playerid,playerid2);
 			if (dist<closestdist && Players[playerid2][Cur_team]==Players[playerid][Cur_team])
@@ -1208,7 +1208,7 @@ stock SendFormattedGameTextToAll(const msg[], time, style, define) //By Allan (e
 {
 	new ret=0;
 	new playerPoolSize = GetPlayerPoolSize();
-	for(new i=0; i<playerPoolSize; i++)
+	for(new i=0; i<playerPoolSize + 1; i++)
 	{
 		if(IsPlayerConnected(i))
 		{
@@ -1370,7 +1370,7 @@ stock VehicleDriverName(vehicleid) //By Sacky
 {
 	new playername[MAX_PLAYER_NAME];
 	new playerPoolSize = GetPlayerPoolSize();
-	for(new i=0;i<playerPoolSize;i++)
+	for(new i=0;i<playerPoolSize + 1;i++)
 	{
 		if(IsPlayerConnected(i))
 		{
@@ -1579,7 +1579,7 @@ stock ShowSpeedForAll(a=SPEED_KMPH) //By Gabriel "Larcius" Cordes
 {
 	new ret=0;
 	new playerPoolSize = GetPlayerPoolSize();
-	for(new i=0;i<playerPoolSize;i++)
+	for(new i=0;i<playerPoolSize + 1;i++)
 	{
 		if(ShowSpeedForPlayer(i,a))
 		{
@@ -1603,7 +1603,7 @@ stock HideSpeedForAll() //By Gabriel "Larcius" Cordes
 {
 	new ret=0;
 	new playerPoolSize = GetPlayerPoolSize();
-	for(new i=0;i<playerPoolSize;i++)
+	for(new i=0;i<playerPoolSize + 1;i++)
 	{
 		if(HideSpeedForPlayer(i))
 		{
@@ -1627,7 +1627,7 @@ stock ShowAccelerationForAll(a=ACC_MPS2) //By Gabriel "Larcius" Cordes
 {
 	new ret=0;
 	new playerPoolSize = GetPlayerPoolSize();
-	for(new i=0;i<playerPoolSize;i++)
+	for(new i=0;i<playerPoolSize + 1;i++)
 	{
 		if(ShowAccelerationForPlayer(i,a))
 		{
@@ -1651,7 +1651,7 @@ stock HideAccelerationForAll() //By Gabriel "Larcius" Cordes
 {
 	new ret=0;
 	new playerPoolSize = GetPlayerPoolSize();
-	for(new i=0;i<playerPoolSize;i++)
+	for(new i=0;i<playerPoolSize + 1;i++)
 	{
 		if(HideAccelerationForPlayer(i))
 		{
